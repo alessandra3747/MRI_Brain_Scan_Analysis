@@ -68,8 +68,6 @@ This project demonstrates my ability to combine image processing, data engineeri
 ---
 
 ## 📸 Preview
-
-*(You can add an image or GIF here)*  
 ```md
 ![Dashboard Preview](images/preview.png)
 
