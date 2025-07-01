@@ -68,6 +68,5 @@ This project demonstrates my ability to combine image processing, data engineeri
 ---
 
 ## 📸 Preview
-```md
-![Dashboard Preview](images/preview.png)
 
+![Preview](images/preview.png)
