@@ -1,4 +1,5 @@
 # MRI Brain Scan Analysis
 
-### Dataset
-[Resources](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset)
+### Resources:
+[Dataset 1](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset) </br>
+[Dataset 2](https://www.kaggle.com/datasets/aryansinghal10/alzheimers-multiclass-dataset-equal-and-augmented)
