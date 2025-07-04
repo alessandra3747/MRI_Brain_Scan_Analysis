@@ -7,10 +7,10 @@ In this project, I developed a complete data analysis pipeline that transforms r
 ## 📌 Project Overview
 
 - I worked with multiclass MRI datasets containing images labeled as:
-  - `NonDemented`
-  - `VeryMildDemented`
-  - `MildDemented`
-  - `ModerateDemented`
+  - 'NonDemented'
+  - 'VeryMildDemented'
+  - 'MildDemented'
+  - 'ModerateDemented'
 
 - The raw image data was originally provided in `.zip` format and processed directly (without manual extraction) using Python.
 
@@ -30,7 +30,7 @@ In this project, I developed a complete data analysis pipeline that transforms r
 ## 🧪 Technologies Used
 
 - **Python** – Data preprocessing and feature engineering:
-  - `PIL`, `NumPy`, `Pandas`, `skimage`, `tqdm`, `os`
+  - PIL, NumPy, Pandas, skimage, tqdm, os
 - **Power BI** – Interactive medical dashboard with patient-level insights
 - **Excel** (optional) – Previewing and cleaning outputs
 
