@@ -34,6 +34,19 @@ Key components of the project:
 
 ---
 
+## 🎯 Project Goals
+
+This project demonstrates skills in:
+
+- 🧠 Processing medical imaging data at scale  
+- 🧬 Extracting structured data from raw `.jpg` inputs  
+- 🛠️ Building a clean and maintainable backend in FastAPI  
+- 🌍 Integrating a modern React-based frontend  
+- 📊 Communicating insights via interactive dashboards in Power BI  
+- 🔗 Bridging ML, backend, and BI into one cohesive solution  
+
+---
+
 ## 🧪 Technologies Used
 
 ### 🌐 Frontend
@@ -107,19 +120,6 @@ The Power BI dashboard includes:
 - 🎛️ Interactive filters for image types and categories  
 
 Designed for technical and non-technical audiences in the healthcare field.
-
----
-
-## 🎯 Project Goals
-
-This project demonstrates skills in:
-
-- 🧠 Processing medical imaging data at scale  
-- 🧬 Extracting structured data from raw `.jpg` inputs  
-- 🛠️ Building a clean and maintainable backend in FastAPI  
-- 🌍 Integrating a modern React-based frontend  
-- 📊 Communicating insights via interactive dashboards in Power BI  
-- 🔗 Bridging ML, backend, and BI into one cohesive solution  
 
 ---
 
