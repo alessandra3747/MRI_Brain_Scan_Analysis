@@ -1,0 +1,81 @@
+import { useState } from "react";
+
+export default function App() {
+
+  const [file, setFile] = useState(null);
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+    setResult(null);
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!file) {
+      alert("Select an image file (PNG/JPG).");
+      return;
+    }
+
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+
+        const response = await fetch("http://localhost:8000/predict", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.detail || "Server Error");
+      }
+
+      const data = await response.json();
+      setResult(data.label);
+
+    } catch (error) {
+
+      alert("Error: " + error.message);
+      setResult(null);
+
+    } finally {
+      setLoading(false);
+    }
+
+  };
+
+  return (
+    <div className="container">
+      <h2>MRI Brain Analysis - Alzheimer</h2>
+      <form onSubmit={handleSubmit} className="form">
+        <label htmlFor="fileInput" className="file-label">
+          {file ? file.name : "Select an image file (PNG/JPG)"}
+        </label>
+        <input
+          id="fileInput"
+          type="file"
+          accept="image/png, image/jpeg"
+          onChange={handleFileChange}
+          className="file-input"
+        />
+        <button type="submit" disabled={loading} className="submit-btn">
+          {loading ? "Analyzing..." : "Classify"}
+        </button>
+      </form>
+      {result && (
+        <div className="result">
+          <h2>Classified as:</h2>
+          <p className="label">{result}</p>
+        </div>
+      )}
+    </div>
+  );
+}
