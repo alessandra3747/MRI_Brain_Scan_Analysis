@@ -30,7 +30,7 @@ Key components of the project:
 - A rule-based classifier simulates diagnostic logic
 - Power BI dashboard allows for deep visual exploration
 - FastAPI backend processes new scans for classification
-- Frontend enables drag-and-drop uploads and live prediction
+- Frontend enables uploads and live prediction
 
 ---
 
