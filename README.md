@@ -126,7 +126,7 @@ This project demonstrates skills in:
 ## 📸 Preview
 
 ![Preview](images/preview.png)
-![Preview](images/previewApp.png)
+![Preview](images/preview2.png)
 ---
 
 ## 🚀 Run Locally
