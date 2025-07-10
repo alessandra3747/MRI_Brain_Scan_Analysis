@@ -1,45 +1,99 @@
-# 🧠 MRI Brain Scan Analysis with Python & Power BI
+# 🧠 MRI Brain Scan Analysis with Python, FastAPI, React & Power BI
 
-In this project, I developed a complete data analysis pipeline that transforms raw MRI brain scan images into a structured dataset and a dynamic Power BI dashboard. The goal was to extract meaningful features from MRI images related to Alzheimer’s disease and visualize patterns across different dementia stages.
+This full-stack project provides a complete solution for analyzing MRI brain scans related to Alzheimer’s disease. It integrates:
+
+- 🧮 A **Python pipeline** for feature extraction from MRI images  
+- 🚀 A **FastAPI backend** for real-time predictions  
+- 🌐 A **React frontend** for user interaction  
+- 📊 A **Power BI dashboard** for data storytelling and insights  
 
 ---
 
 ## 📌 Project Overview
 
-- I worked with multiclass MRI datasets containing images labeled as:
-  - 'NonDemented'
-  - 'VeryMildDemented'
-  - 'MildDemented'
-  - 'ModerateDemented'
+This solution was built using multiclass MRI datasets labeled as:
+- `NonDemented`  
+- `VeryMildDemented`  
+- `MildDemented`  
+- `ModerateDemented`  
 
-- The raw image data was originally provided in `.zip` format and processed directly (without manual extraction) using Python.
+Key components of the project:
 
-- I extracted key image-based features such as:
+- Raw `.zip` image datasets are processed directly in Python
+- Extracted image features include:
   - Mean pixel intensity  
-  - Pixel standard deviation  
+  - Standard deviation  
   - Shannon entropy  
-  - Edge density (via Sobel filter)  
+  - Edge density (Sobel filter)  
   - Center brightness  
-
-- Each image was labeled and standardized (e.g., prefix naming, augmentation detection), and the processed data was saved to a clean `.csv` file.
-
-- The dataset was then used to build an interactive dashboard in **Power BI**, allowing for detailed analysis of feature distributions and class imbalances across dementia severity.
+- Features are saved into a clean, labeled `.csv` file
+- A rule-based classifier simulates diagnostic logic
+- Power BI dashboard allows for deep visual exploration
+- FastAPI backend processes new scans for classification
+- Frontend enables drag-and-drop uploads and live prediction
 
 ---
 
 ## 🧪 Technologies Used
 
-- **Python** – Data preprocessing and feature engineering:
-  - PIL, NumPy, Pandas, skimage, tqdm, os
-- **Power BI** – Interactive medical dashboard with patient-level insights
-- **Excel** (optional) – Previewing and cleaning outputs
+### 🌐 Frontend
+- **Vite** – modern web bundler for fast development  
+- **React** – interactive user interface  
+- **TypeScript** – type-safe frontend logic  
+- **Tailwind CSS** – utility-first styling  
+- **Axios** – sending image data to backend  
+- **CORS** – middleware support for cross-origin requests  
+
+### 🧪 Backend
+- **Python 3.8+** – backend language  
+- **FastAPI** – fast, modern API framework  
+- **Uvicorn** – ASGI web server  
+- **Pillow (PIL)** – for image processing  
+- **NumPy** – for array-based calculations  
+- **scikit-image** – edge detection, entropy, filters  
+- **tqdm** – progress bars for batch processing  
+- **CORS Middleware** – to enable frontend-backend communication  
+
+### 📊 Dashboard & Data
+- **Power BI** – interactive business intelligence dashboard  
+- **Excel** – used to preview and clean `.csv` files  
+- **Pandas** – for tabular data handling  
+- **CSV** – exported image features for BI analysis  
 
 ---
 
 ## 📁 Datasets
 
-- [Kaggle: Augmented Alzheimer MRI Dataset](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset)
-- [Kaggle: Multiclass Alzheimer Dataset (equal & augmented)](https://www.kaggle.com/datasets/aryansinghal10/alzheimers-multiclass-dataset-equal-and-augmented)
+The project uses publicly available MRI datasets:
+
+- [🧠 Augmented Alzheimer MRI Dataset](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset)  
+- [🧠 Multiclass Alzheimer Dataset (equal & augmented)](https://www.kaggle.com/datasets/aryansinghal10/alzheimers-multiclass-dataset-equal-and-augmented)  
+
+These contain thousands of MRI images labeled according to dementia severity.
+
+---
+
+## ⚙️ Application Workflow
+
+1. **Python Pipeline**  
+   - Loads and processes `.zip` files of MRI images  
+   - Extracts image-based features  
+   - Saves results into `.csv`  
+
+2. **FastAPI Server**  
+   - Accepts `.jpg`, `.jpeg`, `.png` uploads  
+   - Processes and classifies images  
+   - Returns predicted dementia level  
+
+3. **React Frontend**  
+   - Users drag-and-drop brain scan images  
+   - Frontend sends file to API  
+   - Displays prediction and confidence  
+
+4. **Power BI Dashboard**  
+   - Visualizes the distribution of extracted features  
+   - Highlights class imbalances, patterns, and augmentation  
+   - Interactive filters for deeper analysis  
 
 ---
 
@@ -47,27 +101,48 @@ In this project, I developed a complete data analysis pipeline that transforms r
 
 The Power BI dashboard includes:
 
-- Class-wise breakdown of image counts  
-- Feature comparison between different dementia stages  
-- Augmentation detection summary  
-- Filters to drill down into specific groups or image types  
+- 📊 Dementia class distribution  
+- 🧮 Feature comparison across classes  
+- 🔍 Augmentation detection  
+- 🎛️ Interactive filters for image types and categories  
 
-The dashboard is fully interactive and built with storytelling in mind — suitable for presenting insights to both technical and non-technical stakeholders in the healthcare domain.
+Designed for technical and non-technical audiences in the healthcare field.
 
 ---
 
-## 🎯 Purpose
+## 🎯 Project Goals
 
-This project demonstrates my ability to combine image processing, data engineering, and visual storytelling in a healthcare context. It highlights skills in:
+This project demonstrates skills in:
 
-- Working with medical imaging data
-- Building structured datasets from unstructured sources
-- Designing clear, actionable visualizations in Power BI
-- Bridging Python and BI tools in real-world applications
+- 🧠 Processing medical imaging data at scale  
+- 🧬 Extracting structured data from raw `.jpg` inputs  
+- 🛠️ Building a clean and maintainable backend in FastAPI  
+- 🌍 Integrating a modern React-based frontend  
+- 📊 Communicating insights via interactive dashboards in Power BI  
+- 🔗 Bridging ML, backend, and BI into one cohesive solution  
 
 ---
 
 ## 📸 Preview
 
 ![Preview](images/preview.png)
+![Preview](images/previewApp.png)
+---
+
+## 🚀 Run Locally
+
+### Run RunAppService.bat file and in a browser go to -> http://localhost:5173/
+
+### Backend (FastAPI) and Frontend
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+cd frontend
+npm install
+npm run dev
 
