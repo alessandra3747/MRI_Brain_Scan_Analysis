@@ -79,7 +79,6 @@ This project demonstrates skills in:
 
 The project uses publicly available MRI datasets:
 
-- [🧠 Augmented Alzheimer MRI Dataset](https://www.kaggle.com/datasets/uraninjo/augmented-alzheimer-mri-dataset)  
 - [🧠 Multiclass Alzheimer Dataset (equal & augmented)](https://www.kaggle.com/datasets/aryansinghal10/alzheimers-multiclass-dataset-equal-and-augmented)  
 
 These contain thousands of MRI images labeled according to dementia severity.
