@@ -128,7 +128,13 @@ Designed for technical and non-technical audiences in the healthcare field.
 ## 📸 Preview
 
 ![Preview](images/preview.png)
-![Preview](images/preview2.png)
+
+</br>
+
+## 📽️ Click on the image below and watch how the application works!
+[![Watch the video](https://img.youtube.com/vi/Sny4_Jnsg30/maxresdefault.jpg)](https://youtu.be/Sny4_Jnsg30)
+
+</br>
 
 ---
 
