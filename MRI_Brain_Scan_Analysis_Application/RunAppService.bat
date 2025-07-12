@@ -10,6 +10,15 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM --- Check if Node.js is installed ---
+where npm >nul 2>&1
+if errorlevel 1 (
+    echo Node.js is not installed or not in PATH.
+    echo Please install Node.js and add it to your PATH environment variable.
+    pause
+    exit /b 1
+)
+
 REM --- Set project folders relative to this script ---
 set BACKEND_DIR=%~dp0app
 set FRONTEND_DIR=%~dp0frontend
@@ -26,7 +35,14 @@ call "%BACKEND_DIR%\venv\Scripts\activate.bat"
 REM --- Upgrade pip and install required Python packages ---
 echo Installing required Python packages...
 pip install --upgrade pip
-pip install fastapi uvicorn pillow numpy scikit-image python-multipart
+pip install fastapi uvicorn pillow numpy scikit-image python-multipart joblib scikit-learn pandas
+
+REM --- Install frontend dependencies if not already installed ---
+if not exist "%FRONTEND_DIR%\node_modules" (
+    echo Installing frontend dependencies...
+    cd /d "%FRONTEND_DIR%"
+    npm install
+)
 
 REM --- Start backend in new terminal window ---
 start cmd /k "cd /d %BACKEND_DIR% && call venv\Scripts\activate.bat && python -m uvicorn main:app --reload & pause"
